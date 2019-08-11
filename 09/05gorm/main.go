@@ -39,5 +39,7 @@ func main() {
 	// fmt.Println("Precio del producto consultado: ", p.Precio)
 	db.First(&p, 2) //trae el primer registro q coincida con el id 2
 	fmt.Println("Precio del producto consultado: ", p.Precio)
-
+	p.Precio = 990000
+	db.Save(&p)
+	fmt.Println("Precio actualizado en la BD, el nuevo precio del productos es: ", p.Precio)
 }
